@@ -46,9 +46,7 @@ export default class Task {
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     deleteButton.textContent = "X";
-    deleteButton.addEventListener("click", () =>
-      this.onDelete(this.boardId, this.id)
-    );
+    deleteButton.addEventListener("click", () => this.onDelete(this.id));
     taskContainer.appendChild(deleteButton);
 
     return taskContainer;
