@@ -8,6 +8,11 @@ export default class Task {
     this.container = document.createElement("li");
   }
 
+  removeFromDOM() {
+    const taskContainer = this.container;
+    taskContainer.remove();
+  }
+
   toggleTask() {
     this.completed = !this.completed;
 
