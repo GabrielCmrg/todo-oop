@@ -16,7 +16,7 @@ export default class Board {
     const filtered = [];
     let taskToDelete;
     this.tasks.forEach((task) => {
-      if (task.id === taskId) {
+      if (task.id !== taskId) {
         filtered.push(task);
       } else {
         taskToDelete = task;
@@ -24,6 +24,11 @@ export default class Board {
     });
     taskToDelete.removeFromDOM();
     this.tasks = filtered;
+  }
+
+  removeFromDOM() {
+    const boardContainer = this.container;
+    boardContainer.remove();
   }
 
   createTask(newTaskName, completed = false) {
